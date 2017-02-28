@@ -1,0 +1,617 @@
+* Minor Todos
+  - [ ] Use boot
+https://github.com/martinklepsch/tenzing
+https://www.reddit.com/r/Clojure/
+  - [ ] Clean up certain namespaces
+    - [ ] core
+  - [ ] Make SVG drawing work using a computation rather than a transform.
+  - [ ] Rename scales -> tunings
+  - [ ] Add Farey circles to presentation
+  - [ ] Upload the compiled thing
+
+* Outline
+** Audience survey
+   - Level of musical, mathematical ability
+** What is this talk about
+   I'm curious about
+   - Why we like music? What makes it music?
+   - Why is western music the way it is: 12 notes, minor, major, but only 6-7 notes used? Why the white notes scale starts on C not A?
+   - What might music of the future sound like?
+   - What might alien music sound like? 
+** History: Pythagorus
+   Forward-thinking
+   3/2 ratio of Hammers
+   
+** A String's Modes of Vibration
+
+** The frequency line
+
+** Introducing the Spiral View
+   Ignores notes BELOW the "center" tone
+   For the musicians, one turn around the spiral is one octave.
+** 12th Root of two
+   6% growth
+   Why 12 divisions?
+   Why did they start tuning this 500 years ago?
+** Problem: They get further and further apart
+** Logarithm
+** Logscale ratio
+** Logscale spiral
+** Wrapping up the ratio spiral
+** Wrapping up the log2 spiral
+** References
+   - Quadrivium
+   - Geometry of music
+
+* Things not yet tried
+  - Instead of log2, use log_1.5 or log_1.3333 to see if we hit those perfect ratios.
+    
+    "I read some books on music theory, but they all seemed oriented at composers rather than mathematicians; they talked about complex things, and honestly a lot of it is still over my head. There is so much analysis on how to make songs that sound good, but I wanted to know /why/ songs sound good in the first place. What is music? Why did ancient greeks think that \"Music of the Spheres\" was a real thing, that the universe had some cosmic hum to it? "
+
+    "The argument apparently went like this: everything that moves makes some noise. The bigger the thing, the louder the noise. So the noise from things as big as planets moving around must be really loud. But we just can't hear it -- we can only tell that something is loud when we have the opportunity to contrast it with quiet. And since they are always moving, we never have any quiet. We must just be deaf to the sounds of the spheres!"
+
+    "That sounds a little silly to me now, but the Pythagoreans were pretty forward-thinking people, not just for their time, but also. Vegetarians, they exaulted learning and advanced geometry, the study of the earth, from mere bridgebuilding to what became the foundation of all mathematics.  "
+
+    "Mathematics is awesome, and I wish I were better at it, because all of the best musicians of the future will be mathematicians. Probably the best ANYTHING of the future will have strong mathematical backgrounds: certainly knowing mathematics is essential for the physicists, engineers, and computer scientists. But also famous artists like, poets like Lewis Carrol, and the musicians. Leonardo famously wrote, \"Let no one ignorant of geometry enter here\" or somesuch.  It's a pity that in school they teach you the technical details but not the real beauty or point of it all: that math is a way of seeing hidden patterns behind everything. That you can literally predict what will happen in the future using these patterns, that you can make machines do nearly anything using the power of math. It often takes hundreds of years for mathematical discoveries to find practical application, that's how far ahead of their times mathematicians can be. Heck, being a good mathematician is rarer than just about anything else; perhaps only one in a million people go on to become a historically significant mathematician. Yet their genius, and their kindness in writing it down and explaining it to us, is what enables humankind to fly in airplanes, send rockets to the moon. We must respect those people who do the labor, but the genius of creation, of inventing something new and sharing it with the rest of humanity; that is the highest achievement of humankind. Genetically, we are still but apes. Raised without culture, we would probably only have enough time in a single lifespan to learn how to throw rocks at prey, let alon sharpen them. Culturally, we now cannot just sharpen tools, we can also trade ideas and materials for tools far far more powerful. Culture is magic that lasts for generations."
+
+    "As the legend goes, Pythagorus heard two hammers striking metal, and the sound was pleasant. He began to wonder, why is that pleasant? One hammer weighed 3 stones, the other 2 stones. The ratio of the weights of the hammers is thus 3/2. But why is the sound pleasant? What would happen if he made a third stone?"
+
+    "He continued the fractions 3/2...3/2 * 3/2 = 9/4"
+
+    "He also found that ratios of 1 and 2 were very pleasant."
+    
+    "He also took a piece of string, tied it between two , and found that by pressing his finger at different points along the string, he could make different sounds. Imagine something like a guitar. "
+
+    "How does string vibrate? If it's just the string vibrating that makes the sound, then why don't all stringed instruments sound the same? To answer this, we'll need to look very carefully at how exactly a string vibrates. "
+
+    "Why is that? Well, today we have something called the wave equation, which is one of the most important equations in physics. The wave equation basically says that waves can move through space and time. What do I mean by that? Well, the solution to the wave equation itself looks like this for a single dimension:"
+
+    "Show Eqn and 1D soln."
+    "Aside: Geometrically, the wave equation might mean something like this: ... (Figure out how the wave equation could be shown geometrically)"
+
+    "Show 1D wave widget."
+
+    "If you play with the sliders, you should be able to make it move around in space, or to make it vibrate 'in place'. When moving through the air, the sound is moving through both space and time. Most of the time, though, we are going to talk about the kind of waves that exist on a musical instrument itself. Those waves are constrained somewhat. The top and bottom of a guitar string cannot wiggle nearly as much as the middle can. "
+
+    " "
+
+    "So let's add some constraints to the wave equation. Now this equation describes much of the same physics that we see in a guitar. It has several 'solutions' or 'modes' that it can vibrate in. The lowest, is called the \"fundamental\" frequency, and the rest are called the \"overtones\". "
+
+    "One curious observation is that the overtones are all multiples of the fundamental. If the fundamental was vibrating at 100hz, then the 1st overtone is 200hz, the next is 300hz, then 400hz, and so on. "
+
+    "Another weird thing is that if you were to take a bunch of spheres, they would touch the string at the nodes. These are called FORD CIRCLES. That's some geometric magic right there, but the best is yet to come."
+
+    "The most magical thing is that when you pluck a guitar, you actually vibrate the guitar string in ALL OF THESE different ways at the same time. The shape of the instrument determines how loud the overtones are relative to the fundamental. Indeed, that's the biggest difference between the sound of a piano, a guitar, a violin, or even a trumpet: the relative loudness of the overtones compared to the fundamental. Musicians call this 'timbre', which is pronunced like 'tamber'. (It's even weirder when you consider how weird tamburine /could/ have been spelled.)"
+
+    "Multi-wave widget that shows sliders for the overtones, vibrating, and also the fundamental, vibrating. And at the very bottom, the SUM OF ALL VIBRATIONS.  "
+    
+    "You can change the timber of a guitar (or any other stringed instrument) depending on where you pluck, bow, or strike it. Striking a string with something hard makes the string vibrate in several ways. If you play in the center of a string, you will excite the string. "
+
+    "If you have a guitar nearby, now would be a good time to play with it. You should be able to create these same notes by plucking the guitar string in the center (near the 12th fret), or by the bridge.  "
+
+    "But back to good Old Pythagorus. He started plucking the strings and trying to make music. He was a very smart guy, but even he made some mistakes. His main mistake was only using the numbers 1, 2, and 3 to music. For this reason, his scale may sound a little strange to modern ears."
+
+    "Basically, all he did was start with the number 1, which is the original frequency, and then multiplyed it over and over again by 3/2. "
+
+    "1 3/2, 9/4, 27/8, 81/16, 243/32,..."
+
+    "On a number line, it gets a little ridiculous because each line is 1.5x further than the previous. They get pretty spaced out. "
+    
+    "But we've ignored one complication. If each octave represents a doubling in frequency, then each tic gets further and further apart. In order to spacing things out evenly, we need to take the log transformation of them. This is basically just a way of saying that each distance correpsonds to a proportional amount of growth instead of an absolute one. If you go 1 inch to the right, you would grow twice as large, for example. This would be true regardless of your original size.  "
+    
+    "The problem is thus: do we want to represent ratios and harmonics accurately, or do we want our 'notes' to be evenly spcaced throughout our preceptual space?"
+
+    "One thing that a Real Scientist would be itching to do right now is to use a log transformation -- something that we will revisit later that will squish together those lines so that they would be evenly spaced -- but for now, we'll just wrap up that line into a spiral. We are going to wrap it up very carefully, and in a very special way. If the original note is 100 hz, then we are going to wrap it up such that each turn around is a multiple of that. "
+
+    "Myself, I like to look at the spiral as representing those numbers as being how far around a circle we are. Each octave is like a circle, and once you go all the way around, you reach the beginning again...just like a circle. "
+
+    "Aside: the discerning mathematician will note that the string must have stretched a little as it was wrapped, because the distance around the outer turns is larger than for the inner turns. This fact is not really relevant...but thanks for nerd-fact-checking me! Now go derive the equation for the spiral I used and the actual distortion. "
+    
+    "Now, let's do another little transformation and slide the notes that are further out in the spiral back towards the first turn of the spiral."
+
+    "Huh, look at that! After the 8th we are awefully close to the beginning. Pythagorus gave up at this point and probably said '#$)(*#$)', which is greek for 'close enough'. Subtracting off everything to reduce that to numbers in the range 0 to 1, we have "
+
+    "0 1/2 1/4 3/8"
+
+    "That last one is called the pythagorean comma. It's just what Pythagrous had left over because there's no way to ever reach a multiple of 2 if you keep multiplying by 3/2 forever. (Nerds out there: prove it or hand in your nerd card!) "
+    
+    "This is a pretty good scale. Pythagorus was a genius to realize that simple, pure mathematical ratios are pleasing to the ear. I mean, Just Listen to it for a sec. I'll even play you a song."
+
+    "For comparison, here's the same song using the scale we use today. Can you tell the difference? (try A or B)"
+
+    "There was just one...tiny...problem. Instead of ignoring all the frequencies, let's list them again. 100hz 125hz 150hz, etc. What happens if you try to start on the SECOND note of the scale? What do the notes become then?"
+
+    "125hz...."
+
+    "Wait, that's not the same scale anymore! The perfect ratios have been lost! "
+
+    "The loss of the perfect ratios is why most antient music is usually stuck in a single key with a droning fundamental; they couldn't change the fundamental root note without retuning their instruments! They were stuck in a single key! "
+
+    "--------------------------------"
+
+    "Well, which of the classical keys are closest to others?"
+
+    "--------------------------"
+    
+    "Starting in the ??? period, people started looking for ways to quickly jump between keys without losing "
+
+    "People started looking for something that would be equally good (or equally bad) in all keys. No matter where you started on this number line, the notes would all hit the right places."
+
+    "This spiral looked like this...."
+
+    "As it turns out, the 12th root of 2 is very close to hitting many of the pleasing ratios. If you don't believe me, try changing the nth root of 2 and see what happens."
+
+    "You see, if you chose the root "
+
+    "--------------------------------------------------------------------------------"
+    " Using Math to Go Further"
+
+    "Music has always been very mathematically based. We're now going to play with two curious observations: "
+
+    "Farey seq. First square, then arcs, then circle."
+
+    "Then repeated fractions "
+    
+    "Then link repeated fractions and farey seq..."
+    
+    "Then show the WORST repeated fraction.... PHI."
+
+    "--------------------------------------------------------------------------------"
+    "How can Phi be used to make a new scale?"
+
+    "Well, I base this one on another observation."
+
+    "--------------------------------------------------------------------------------"
+
+    "The future of music"
+
+    "So what will the future of music look like? Well, we have some pretty wonderful developments from the musical geniuses of the past:"
+    [:ol 
+     [:li "The Greeks were geniuses: simple ratios are consonant and pleasant to the ear" ]
+     [:li "The Enlightenment thinkers were geniuses: equitemper tuning allows incredibly useful and rapid key changes"]
+     [:li "Rock stars are geniuses: dissonance is just as much a part of music as consonance"]] 
+
+    "There has been a gradual trend in music towards increased complexity; not only are the sounds of the past reproduced, but new ones are added."
+
+    "What can we do to give composers access to new, more complex consonances? Use more frequency ratios that aren't found in present music, such as the corrected 1/4th chords, as well as the new 1/5, 1/6ths, and 1/7ths chords."
+
+    "How can we preserve the advantages of equitemper tuning? Well, we can either use electronic instruments to generate our music, so that they are not trapped in a single key. Or, we can invent new musical instruments. (Curious luthiers, please enquire within.)"
+
+    "Finally, how can we increase the dissonance of musical notes still further? By using Phi-based tuning and a non-repeating scale."
+
+    "--------------------------------------------------------------------------------"
+
+    "Joke: When you hit 7th term of farey sequence, plot a big CAUTION: Are you sure you want to keep going? Then orange WARNING: This is starting to get ridiculous. Or maybe DANGER: Too Many Lines. Finally: Silliness threshold breached"
+
+    "What's math, anyway?"
+
+    "So, you've now learned some cute tricks: How to divide a line into exactly equal pieces using the midpoint rule. But you're no mathematician yet. You see, mathematicians have to learn how to PROVE that they are right. Some people say that the ? How do we know which is right? Well, we PROVE it. That's what makes it such a powerful form of pattern finding. "
+
+    "Possible future-proof instruments; cellos, violins, trombones, timpani....glockenspiel not so much?"
+
+    "Congrats, now you know why the guitar is so awesome (You can change the timbre easily using the plucking hand and the fundamental by moving up and down the fretboard), and why the violin is even more awesome (because without a fretboard, you could play musical notes of the future that a guitar cannot). My prediction for the future?"
+
+    "Cellists playing sunflower scale notes that make the dissonance of heavy metal thrashers look tame."
+
+    "...but I've been wrong before. "
+
+    ;; [:h2 "Introduction"]
+    ;; [:p "The history of music records a continual yet gradual development toward increased complexity. One easy way to measure this increase is to consider the number of notes found in the scales commonly used in each era: the pentatonic (5-note) scale dates back to prehistory, the diatonic (7-note) scale to the Classical Greeks, just intonation (7-10 notes) to medeival times, and western equitemper (12-note) tuning to the Renaissance. The progression toward more notes in a scale is so obvious that we cannot help but wonder: \"How many notes will future musicians use? What properties will their scales have?\""]
+]
+
+   ;; [:div.section
+   ;;  [:h3 "Goals"]
+   ;;  [:ul
+   ;;   ;[:li "Simple, Intutive presentation >> technically accurate details"]
+   ;;   ;[:li "Nonverbal explanations"]
+   ;;   ]
+   ;;  ]
+
+   #_ [:div.section
+    [:h3 "What is needed in a musical scale?"]
+    [:p "Why is 12-Equitemper so amazing? Persian music uses X notes, Indian uses 16 notes. But why are these scales less flexible? "]
+       [:p "Our music is mostly triangular, with a little bit of a square. Pentagons are FORBIDDEN. "]
+       [:p "The most dissonant note is therefore."]]
+
+   #_ [:div.section
+    [:h3 "What is Music?"]
+    [:p "For the purposes of this essay, we can get by with a simple definition: music is the name that we give to ordered sound that we like. This almost asks more questions than it answers. \"What does 'ordered sound' really mean? What if some people like a sound and others don't like a sound -- is it still music?\" "]
+    [:p "Although people's taste in music clearly varies widely, people generally like sounds that have simple, obvious structure that is easily percieved. Strong beats, simple syncopation, harmonious chords, pleasant textures -- all of these are simple structural patterns of sound that we combine to make music. Too simple a beat, like a thumping washing machine? We don't like it. Too simple a tonal structure, like a droning wail? No tonal structure, like a fan without a clear pitch? We don't like it. We like patterns that we can understand. "]
+    [:p "This essay will not discuss the rhythmic structure of music at all, but it will discuss how chords are constructed, and what makes them sound consonant or dissonant. In order to talk precisely about musical chords, we will need more precise vocabulary to characterize their many patterns, and because mathematics is the best way of describing general patterns about the world that mankind has yet discovered, this unsurprisingly means that the best way to talk about music is going to be through math. "]
+    [:p "For the math-phobics out there, don't despair! I would like this to be easily understood by anyone, and because most children (and some adults!) who may be reading this may not have had an opportunity to full develop their mathematical abilities yet, we will also express all of the mathematics through geometry. Since mathematics is fundamentally just a formal way to express the equivalence between two things taken in the abstract, any proof that can be done with mathematics can be shown to be equivalently with geometry. "]]
+
+
+
+   [:p "Transposition and Inversions"
+
+    "Transposition is when you multiply all the frequencies by the same amount (or in log space, when you add the same amount to everything). It doesn't change anything about the geometric patterns we have seen here, provided that we graph using the root note as the lowest note. Pitch is thus an invariant in this spiral viewer. "
+
+    "It's an important realization in music that transposition is generally natural and effortless. Everybody seems to care about the ratios between the notes, but almost none of us can remember the absolute pitch. For this reason, we can ignore the absolute pitch and let the viewer throw the rootmost note as the root. "
+
+    "Q: What about songs that have a root, but never play it, yet you can still 'hear' it there? I think this is somehow accomplished mathematically be finding the most reduced fractions, by playing VI-V-I to establish the central tone of the piece?"
+
+   
+    "Inversions are different. If we had three notes in a chord, say DFC, that produces three possible ratios: a minor 3rd between D and F, a minor 7th between D and C, and a fifth between F and C. Its inversion (ONE of the many possible inversions?) is DAC, which has 5, m3, and m7 as the.  "
+ 
+    "Mathematically, m3 + 5 = m7 for the DFC chord, and 5+m3=m7 for the DAC chord. "
+    
+    "Ivar is not really sure this is a true symmetry, although it is certainly a transformation operation. "
+
+    "Ivar posits: An inversion of one note, without any other references, is not possible. "
+
+    "Ivar posits again: Assuming that octaves are cyclical, an inversion of two notes would be to simply bump one note up or down an octave, making the other note the root. i.e. a chord CG would become GC, so the fifth became a fourth?  "
+
+    "Graphically, I have made these observations:
+Root=C3, note=C3. unison makes a line to the right. (Ray, 1 vertex) 1:1
+Root=C3, note=C4. octave makes a line to the right. (Ray, 1 vertex) 1:2 ratio
+Root=C4, note=C3. octave makes a horizontal line. (2 vertexes) But this is a false symmetry; it is the same notes as the previous we just have not chosen the proper root note.
+
+  Inversion pair test 1:
+  Start with a fifth. Root=C3, note=G3 fifth makes a horizontal line (2 vertexes).
+
+  Inversion about C3 moves G3 from being 3/2 larger than C3, to being 2/3rd of C3. 
+  Inversion about G3 moves C3 up to???  
+
+  Comments: I'm a little vague on this. There seems to be two possible inversions: one in linear frequency and one in log frequency. For the linear freq inversion, it seems that given two notes, no matter where you invert about on the number line, the ratio of the two notes will never change. For the log freq inversion, this is not true?
+
+ the ratio between two notes will never change, no matter WHERE you invert about on the number line. 
+
+  I really need to do log transformations. 
+
+Root=C3, note=F3 fourth makes a triangle 3 vertexes
+
+
+
+
+"
+
+    "Ivar posits a 3rd time: "
+
+]
+
+   
+#_   [:div.section
+    [:h3 "What is a scale?"]
+    [:p "A selection of pitches, of frequencies. "]
+    [:p "Why do we have 12 notes in a scale? How many notes SHOULD we have in the scale?"]
+    [:p "Which notes are available to a musician?"]
+    [:p "The violin can hit ANY note; we are only limited by the sharpness of a musicians' fingers and the sensitivity of her ears."]]
+
+  #_ [:div.section
+    [:h3 "The Development of Scale Complexity"]
+    [:p "Why is 12-Equitemper so amazing? Persian music uses X notes, Indian uses 16 notes. But why are these scales less flexible? "]]
+   ]
+
+  #_ [:div.section
+      [:h3 "Theoretical Maximums"]
+      [:p "Even aliens with perfect hearing would need a certain length of duration to infer two pitches are the same or different. Given the average tempo of our music, what's the theoretical maximum on the number of notes in a scale?"]]
+  
+
+  )
+
+
+;; "While most of our brains already be too accustomed to habit to appreciate an entirely new scale, it is my hope that this may at least give the future's children a place from which to proceed a little farther along in the development of ever more wonderous music. 
+
+;; |                  pnt dia 12ET Me
+;; | Simple ratios?  | Y | Y | Y | Y
+;; | Complex ratios? | - | Y | Y | Y
+;; | Modulatable?    | - | - | Y | Y
+;; | Expandable?     | - | - | - | Y
+;; "
+
+(ns circle.text)
+
+;; Meta Ideas
+;; If I want to play Mp3s, it will be easier if it is related to a small chunk of data, a single idea, etc. 
+;; So: rather than this being a long continuous page, perhaps it would be better made as a slideshow. 
+;; Then I can make a "canvas" to which things are rendered, and fn to render to the screen a the left.
+;; 
+
+;; Q: What I wrap up the logarithmic spiral? Or make it log2? 
+;; Show a spectrogram of music, singing, noises, etc
+
+;; After presenting the fundamental modes of a string, switch immediately to the spiral view so that we can see ONE set of dots, before presenting any chords
+;; 
+
+"In these days we hear that cybernetics will soon give us machines which learn. If they learn in a complicated enough sense of the word, why couldn't they learn what we like, even when we don't know ourselves? Thus, by rewarding or punishing a computer for the success or failure of its efforts, we might so condition the ocpmuter that when we pressed a botton marked Spanish, classical, rock-and-roll,s weet, etc., it would produce just what we wanted in connection with the terms. Such thoughts are intriguing, but they are of course nonsense in our day and will probably remain so for a long time to come. -- John R. Pierce, \"An Introduction to Information Theory\", 1961. p261 "
+
+"As that book shows, even by the 1950's, people were already using \"Markoff Chain\" generators to make poetry, music, and such. In some ways, very little has changed in the last 60 years!"
+
+(defn lorem-ipsum
+  "Dummy text. By default returns it once. Provide an integer argument N to make it repeated."
+  ([]
+   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. ")
+  ([n]
+   (apply str (take n (repeatedly lorem-ipsum)))))
+
+(defn main-text
+  []
+  [:div
+
+   [:p "Crazy idea: Maybe what I need is a harmonograph-like viewer to see the consonance of things. That's pretty much what I have come up with via my spiral viewport; the advantage is that the harmonograph will get messy if you are even slightly off of the exact ratio. On the other hand, perceptually we care less about ratios, which is absolutely better done as log. If the frequency f2 is twice as high as f1, then log2(f2/f1)=1. Similarly, if it's a 3/2 ratio, then log_(3/2) (f2/f1)=1. So maybe I can just use different log bases to determine when ratios are hit?"
+
+    "log2      1,2,3,4 ..."
+    "log1.5    1,2,3... "
+    "log1.333  1,2,3..." ;; etc?
+    ]
+
+   [:h2 "A Geometric History of Music: Pure Tones of the Past, The Imperfect but Convenient Present, and our Sunflower-filled Future"]
+   [:p "Subtitle: Geometry suggests what musical scales of the future may sound like...(And you thought first-year violin players sounded bad enough already!)"]
+
+   [:p "NERD MODE SETTING: MATH-HATER MATH-PHOBIC MATH-CURIOUS MATH-NERD-Wannabe REAL-MATHMATICIAN"]
+   ;; Phobic: "Don't worry, if you know what a triangle is you'll be fine, and there are probably sudden no pop quizzes like this ZOMG: 1+1=2
+   ;; Pro tip: It turns out that, in the same way that googling "Farm-curious" is not the best way to become a farmer, self-identifying as math-curious is not the best way to become a mathematician. Just click math nerd already and be proud of your geeky ambitions!
+   ;; Math-nerd-wannabe: You're my kind of person!
+   ;; Real Mathematician: Can I have your autograph? 
+   [:p "MUSICIAN MODE SETTING: NON-MUSICIAN, AMATEUR, IN-A-BAND, PROFESSIONAL, COMPOSER"] 
+   ;; Non-Musician: Like my friends 
+   ;; Amateur: My level
+   ;; Wow, an artist! Artists have my respect.  
+   ;; On the composer setting, the page disappears and I just say "Worst-case scenario: you get a laugh at all my musical mistakes. Best-case scenario: you get a laugh out of all my mistakes and you go on to compose something using what I submit to be the worst possible musical interval.
+   [:div 
+    [:h3 "Goals"]
+    [:p "Artistic. Poetic. Humble. Historical. Humerous. Thoughtful. Considerate. Technically precise. Inspiring, by admiring the masterful work of others and showing how their efforts benefit us all. Curious. Touching links to more, providing connections to other interesting things in math, music, and science. Edited by Dana. Nit-picked by Daniela. Designed by Jeff. Cosmically expanded by Sterling. Produced by Phu. Admire people who ask good questions. Show it to Andy to get good design info. Be accessible to normal children, and clever enough for the smart ones. A little editorialization is fine...think of the frenchman's radio. Lessons in 5 minute chunks, and they should load lightning fast! Don't excuse people's lack of math interest...inspire them to learn more. First the simple intuition, then the simple math and geometry, and finally a link to technically accurate geek stuff."]]
+   [:div 
+    [:h2 "Technical Fluff"]
+     [:p "Smooth, animated transitions. Sounds. A old-voiced narrator (Dad?), with things cut into short sentences, or maybe synchronized with a podcast. Graphically minimalist. But popup widgets create new opportunities for things to happen. Youtube copies that link to my site. Add a tooltip/popup with an image to EVERY SINGLE THING that is even slightly interesting. A floating ghost that shoots musical notes at what the narrator is talking about, or what you should click next. "]]
+
+   [:div.section
+    [:h2 "Brainstorm"]
+
+
+    "even the word 'octave' is pretty flawed. We should be calling it a 'loop', 'cycle', a 'range' or something more appropriate. There are no longer 8 notes in an octave; there are 12."
+
+    "Although I played music in a school band growing up, there were always a lot of musical questions that I was curious about which I never felt were properly answered. Why does the major chord sound so strong and good, and the minor chord sounds a little sad or scary? Why do some of the scales in music I heard in church sound so old-fashioned or just plain weird? Why does a scale on the white notes start on C instead of A, which would make more sense if you were naming notes on a scale? Why are there 12 notes in western music, but when you are trying to improvise, you can only use a small handful of them? Why do so many songs sound the same? What about non-western music, and why do they have 5 or 16 or 21 notes in their scale? If they have more notes, why don't we use their system? And even when there are 12 notes, why is it whenever I try to improvise or play along to a song, it always sounds so terrible because I seem to hit the wrong ones about half the time? What is it that musicians are thinking about when they are playing along, and how do they know which notes to play? What are those mysterious 'modulations' that musicians talk about? And after moving to Seattle...why does everybody here seem to know how to play the guitar? What's so great about the electric guitar, that everybody can play it and it seems to dominate so much of modern music? Why not the piano, or the pipe organ(!), which both have way more notes they can play and seem to be more powerful instruments?"
+
+    "I remember the sense of mystery in high school when a friend in a math class told me about the 12th root of two, and its importance in music. I was like, the what'th root of who? So he wrote down root12(2), which is also written 2^(1/12), in decimal form as 1.06, meaning about 6% growth. And he found the note middle A, which has a fundamental frequency of about 440Hz, and then he told me that A# is 440*1.06=466Hz, and that B is 440*1.06*1.06=466*1.06=1.03, and that every note is higher than the previous one by 6%. I found that pretty interesting."
+
+    "Later, I wondered, \"Wait, how did medeival musicians figured that out 500 years ago without calculators or even slide rules? Why did they choose 12 notes, and not 10? Is it because of clocks, which also have 12 divisions, or is it an arbitrary? As I found later, the answer is surprising: there are very good reasons for a scale with 12 notes, and it has very little to do with clocks!"
+    
+    "I read some books on music theory, but they all seemed oriented at composers rather than mathematicians; they talked about complex things, and honestly a lot of it is still over my head. There is so much analysis on how to make songs that sound good, but I wanted to know /why/ songs sound good in the first place. What is music? Why did ancient greeks think that \"Music of the Spheres\" was a real thing, that the universe had some cosmic hum to it? "
+
+    "The argument apparently went like this: everything that moves makes some noise. The bigger the thing, the louder the noise. So the noise from things as big as planets moving around must be really loud. But we just can't hear it -- we can only tell that something is loud when we have the opportunity to contrast it with quiet. And since they are always moving, we never have any quiet. We must just be deaf to the sounds of the spheres!"
+
+    "That sounds a little silly to me now, but the Pythagoreans were pretty forward-thinking people, not just for their time, but also. Vegetarians, they exaulted learning and advanced geometry, the study of the earth, from mere bridgebuilding to what became the foundation of all mathematics.  "
+
+    "Mathematics is awesome, and I wish I were better at it, because all of the best musicians of the future will be mathematicians. Probably the best ANYTHING of the future will have strong mathematical backgrounds: certainly knowing mathematics is essential for the physicists, engineers, and computer scientists. But also famous artists like, poets like Lewis Carrol, and the musicians. Leonardo famously wrote, \"Let no one ignorant of geometry enter here\" or somesuch.  It's a pity that in school they teach you the technical details but not the real beauty or point of it all: that math is a way of seeing hidden patterns behind everything. That you can literally predict what will happen in the future using these patterns, that you can make machines do nearly anything using the power of math. It often takes hundreds of years for mathematical discoveries to find practical application, that's how far ahead of their times mathematicians can be. Heck, being a good mathematician is rarer than just about anything else; perhaps only one in a million people go on to become a historically significant mathematician. Yet their genius, and their kindness in writing it down and explaining it to us, is what enables humankind to fly in airplanes, send rockets to the moon. We must respect those people who do the labor, but the genius of creation, of inventing something new and sharing it with the rest of humanity; that is the highest achievement of humankind. Genetically, we are still but apes. Raised without culture, we would probably only have enough time in a single lifespan to learn how to throw rocks at prey, let alon sharpen them. Culturally, we now cannot just sharpen tools, we can also trade ideas and materials for tools far far more powerful. Culture is magic that lasts for generations."
+
+    "As the legend goes, Pythagorus heard two hammers striking metal, and the sound was pleasant. He began to wonder, why is that pleasant? One hammer weighed 3 stones, the other 2 stones. The ratio of the weights of the hammers is thus 3/2. But why is the sound pleasant? What would happen if he made a third stone?"
+
+    "He continued the fractions 3/2...3/2 * 3/2 = 9/4"
+
+    "He also found that ratios of 1 and 2 were very pleasant."
+    
+    "He also took a piece of string, tied it between two , and found that by pressing his finger at different points along the string, he could make different sounds. Imagine something like a guitar. "
+
+    "How does string vibrate? If it's just the string vibrating that makes the sound, then why don't all stringed instruments sound the same? To answer this, we'll need to look very carefully at how exactly a string vibrates. "
+
+    "Why is that? Well, today we have something called the wave equation, which is one of the most important equations in physics. The wave equation basically says that waves can move through space and time. What do I mean by that? Well, the solution to the wave equation itself looks like this for a single dimension:"
+
+    "Show Eqn and 1D soln."
+    "Aside: Geometrically, the wave equation might mean something like this: ... (Figure out how the wave equation could be shown geometrically)"
+
+    "Show 1D wave widget."
+
+    "If you play with the sliders, you should be able to make it move around in space, or to make it vibrate 'in place'. When moving through the air, the sound is moving through both space and time. Most of the time, though, we are going to talk about the kind of waves that exist on a musical instrument itself. Those waves are constrained somewhat. The top and bottom of a guitar string cannot wiggle nearly as much as the middle can. "
+
+    " "
+
+    "So let's add some constraints to the wave equation. Now this equation describes much of the same physics that we see in a guitar. It has several 'solutions' or 'modes' that it can vibrate in. The lowest, is called the \"fundamental\" frequency, and the rest are called the \"overtones\". "
+
+    "One curious observation is that the overtones are all multiples of the fundamental. If the fundamental was vibrating at 100hz, then the 1st overtone is 200hz, the next is 300hz, then 400hz, and so on. "
+
+    "Another weird thing is that if you were to take a bunch of spheres, they would touch the string at the nodes. These are called FORD CIRCLES. That's some geometric magic right there, but the best is yet to come."
+
+    "The most magical thing is that when you pluck a guitar, you actually vibrate the guitar string in ALL OF THESE different ways at the same time. The shape of the instrument determines how loud the overtones are relative to the fundamental. Indeed, that's the biggest difference between the sound of a piano, a guitar, a violin, or even a trumpet: the relative loudness of the overtones compared to the fundamental. Musicians call this 'timbre', which is pronunced like 'tamber'. (It's even weirder when you consider how weird tamburine /could/ have been spelled.)"
+
+    "Multi-wave widget that shows sliders for the overtones, vibrating, and also the fundamental, vibrating. And at the very bottom, the SUM OF ALL VIBRATIONS.  "
+    
+    "You can change the timber of a guitar (or any other stringed instrument) depending on where you pluck, bow, or strike it. Striking a string with something hard makes the string vibrate in several ways. If you play in the center of a string, you will excite the string. "
+
+    "If you have a guitar nearby, now would be a good time to play with it. You should be able to create these same notes by plucking the guitar string in the center (near the 12th fret), or by the bridge.  "
+
+    "But back to good Old Pythagorus. He started plucking the strings and trying to make music. He was a very smart guy, but even he made some mistakes. His main mistake was only using the numbers 1, 2, and 3 to music. For this reason, his scale may sound a little strange to modern ears."
+
+    "Basically, all he did was start with the number 1, which is the original frequency, and then multiplyed it over and over again by 3/2. "
+
+    "1 3/2, 9/4, 27/8, 81/16, 243/32,..."
+
+    "On a number line, it gets a little ridiculous because each line is 1.5x further than the previous. They get pretty spaced out. "
+    
+    "But we've ignored one complication. If each octave represents a doubling in frequency, then each tic gets further and further apart. In order to spacing things out evenly, we need to take the log transformation of them. This is basically just a way of saying that each distance correpsonds to a proportional amount of growth instead of an absolute one. If you go 1 inch to the right, you would grow twice as large, for example. This would be true regardless of your original size.  "
+    
+    "The problem is thus: do we want to represent ratios and harmonics accurately, or do we want our 'notes' to be evenly spcaced throughout our preceptual space?"
+
+    "One thing that a Real Scientist would be itching to do right now is to use a log transformation -- something that we will revisit later that will squish together those lines so that they would be evenly spaced -- but for now, we'll just wrap up that line into a spiral. We are going to wrap it up very carefully, and in a very special way. If the original note is 100 hz, then we are going to wrap it up such that each turn around is a multiple of that. "
+
+    "Myself, I like to look at the spiral as representing those numbers as being how far around a circle we are. Each octave is like a circle, and once you go all the way around, you reach the beginning again...just like a circle. "
+
+    "Aside: the discerning mathematician will note that the string must have stretched a little as it was wrapped, because the distance around the outer turns is larger than for the inner turns. This fact is not really relevant...but thanks for nerd-fact-checking me! Now go derive the equation for the spiral I used and the actual distortion. "
+    
+    "Now, let's do another little transformation and slide the notes that are further out in the spiral back towards the first turn of the spiral."
+
+    "Huh, look at that! After the 8th we are awefully close to the beginning. Pythagorus gave up at this point and probably said '#$)(*#$)', which is greek for 'close enough'. Subtracting off everything to reduce that to numbers in the range 0 to 1, we have "
+
+    "0 1/2 1/4 3/8"
+
+    "That last one is called the pythagorean comma. It's just what Pythagrous had left over because there's no way to ever reach a multiple of 2 if you keep multiplying by 3/2 forever. (Nerds out there: prove it or hand in your nerd card!) "
+    
+    "This is a pretty good scale. Pythagorus was a genius to realize that simple, pure mathematical ratios are pleasing to the ear. I mean, Just Listen to it for a sec. I'll even play you a song."
+
+    "For comparison, here's the same song using the scale we use today. Can you tell the difference? (try A or B)"
+
+    "There was just one...tiny...problem. Instead of ignoring all the frequencies, let's list them again. 100hz 125hz 150hz, etc. What happens if you try to start on the SECOND note of the scale? What do the notes become then?"
+
+    "125hz...."
+
+    "Wait, that's not the same scale anymore! The perfect ratios have been lost! "
+
+    "The loss of the perfect ratios is why most antient music is usually stuck in a single key with a droning fundamental; they couldn't change the fundamental root note without retuning their instruments! They were stuck in a single key! "
+
+    "--------------------------------"
+
+    "Well, which of the classical keys are closest to others?"
+
+    "--------------------------"
+    
+    "Starting in the ??? period, people started looking for ways to quickly jump between keys without losing "
+
+    "People started looking for something that would be equally good (or equally bad) in all keys. No matter where you started on this number line, the notes would all hit the right places."
+
+    "This spiral looked like this...."
+
+    "As it turns out, the 12th root of 2 is very close to hitting many of the pleasing ratios. If you don't believe me, try changing the nth root of 2 and see what happens."
+
+    "You see, if you chose the root "
+
+    "--------------------------------------------------------------------------------"
+    " Using Math to Go Further"
+
+    "Music has always been very mathematically based. We're now going to play with two curious observations: "
+
+    "Farey seq. First square, then arcs, then circle."
+
+    "Then repeated fractions "
+    
+    "Then link repeated fractions and farey seq..."
+    
+    "Then show the WORST repeated fraction.... PHI."
+
+    "--------------------------------------------------------------------------------"
+    "How can Phi be used to make a new scale?"
+
+    "Well, I base this one on another observation."
+
+    "--------------------------------------------------------------------------------"
+
+    "The future of music"
+
+    "So what will the future of music look like? Well, we have some pretty wonderful developments from the musical geniuses of the past:"
+    [:ol 
+     [:li "The Greeks were geniuses: simple ratios are consonant and pleasant to the ear" ]
+     [:li "The Enlightenment thinkers were geniuses: equitemper tuning allows incredibly useful and rapid key changes"]
+     [:li "Rock stars are geniuses: dissonance is just as much a part of music as consonance"]] 
+
+    "There has been a gradual trend in music towards increased complexity; not only are the sounds of the past reproduced, but new ones are added."
+
+    "What can we do to give composers access to new, more complex consonances? Use more frequency ratios that aren't found in present music, such as the corrected 1/4th chords, as well as the new 1/5, 1/6ths, and 1/7ths chords."
+
+    "How can we preserve the advantages of equitemper tuning? Well, we can either use electronic instruments to generate our music, so that they are not trapped in a single key. Or, we can invent new musical instruments. (Curious luthiers, please enquire within.)"
+
+    "Finally, how can we increase the dissonance of musical notes still further? By using Phi-based tuning and a non-repeating scale."
+
+    "--------------------------------------------------------------------------------"
+
+    "Joke: When you hit 7th term of farey sequence, plot a big CAUTION: Are you sure you want to keep going? Then orange WARNING: This is starting to get ridiculous. Or maybe DANGER: Too Many Lines. Finally: Silliness threshold breached"
+
+    "What's math, anyway?"
+
+    "So, you've now learned some cute tricks: How to divide a line into exactly equal pieces using the midpoint rule. But you're no mathematician yet. You see, mathematicians have to learn how to PROVE that they are right. Some people say that the ? How do we know which is right? Well, we PROVE it. That's what makes it such a powerful form of pattern finding. "
+
+    "Possible future-proof instruments; cellos, violins, trombones, timpani....glockenspiel not so much?"
+
+    "Congrats, now you know why the guitar is so awesome (You can change the timbre easily using the plucking hand and the fundamental by moving up and down the fretboard), and why the violin is even more awesome (because without a fretboard, you could play musical notes of the future that a guitar cannot). My prediction for the future?"
+
+    "Cellists playing sunflower scale notes that make the dissonance of heavy metal thrashers look tame."
+
+    "...but I've been wrong before. "
+
+    ;; [:h2 "Introduction"]
+    ;; [:p "The history of music records a continual yet gradual development toward increased complexity. One easy way to measure this increase is to consider the number of notes found in the scales commonly used in each era: the pentatonic (5-note) scale dates back to prehistory, the diatonic (7-note) scale to the Classical Greeks, just intonation (7-10 notes) to medeival times, and western equitemper (12-note) tuning to the Renaissance. The progression toward more notes in a scale is so obvious that we cannot help but wonder: \"How many notes will future musicians use? What properties will their scales have?\""]
+]
+
+   ;; [:div.section
+   ;;  [:h3 "Goals"]
+   ;;  [:ul
+   ;;   ;[:li "Simple, Intutive presentation >> technically accurate details"]
+   ;;   ;[:li "Nonverbal explanations"]
+   ;;   ]
+   ;;  ]
+
+   #_ [:div.section
+       [:h3 "What is needed in a musical scale?"]
+       [:p "Why is 12-Equitemper so amazing? Persian music uses X notes, Indian uses 16 notes. But why are these scales less flexible? "]
+       [:p "Our music is mostly triangular, with a little bit of a square. Pentagons are FORBIDDEN. "]
+       [:p "The most dissonant note is therefore."]]
+
+   #_ [:div.section
+    [:h3 "What is Music?"]
+    [:p "For the purposes of this essay, we can get by with a simple definition: music is the name that we give to ordered sound that we like. This almost asks more questions than it answers. \"What does 'ordered sound' really mean? What if some people like a sound and others don't like a sound -- is it still music?\" "]
+    [:p "Although people's taste in music clearly varies widely, people generally like sounds that have simple, obvious structure that is easily percieved. Strong beats, simple syncopation, harmonious chords, pleasant textures -- all of these are simple structural patterns of sound that we combine to make music. Too simple a beat, like a thumping washing machine? We don't like it. Too simple a tonal structure, like a droning wail? No tonal structure, like a fan without a clear pitch? We don't like it. We like patterns that we can understand. "]
+    [:p "This essay will not discuss the rhythmic structure of music at all, but it will discuss how chords are constructed, and what makes them sound consonant or dissonant. In order to talk precisely about musical chords, we will need more precise vocabulary to characterize their many patterns, and because mathematics is the best way of describing general patterns about the world that mankind has yet discovered, this unsurprisingly means that the best way to talk about music is going to be through math. "]
+    [:p "For the math-phobics out there, don't despair! I would like this to be easily understood by anyone, and because most children (and some adults!) who may be reading this may not have had an opportunity to full develop their mathematical abilities yet, we will also express all of the mathematics through geometry. Since mathematics is fundamentally just a formal way to express the equivalence between two things taken in the abstract, any proof that can be done with mathematics can be shown to be equivalently with geometry. "]]
+
+   [:p "Transposition and Inversions"
+
+    "Transposition is when you multiply all the frequencies by the same amount (or in log space, when you add the same amount to everything). It doesn't change anything about the geometric patterns we have seen here, provided that we graph using the root note as the lowest note. Pitch is thus an invariant in this spiral viewer. "
+
+    "It's an important realization in music that transposition is generally natural and effortless. Everybody seems to care about the ratios between the notes, but almost none of us can remember the absolute pitch. For this reason, we can ignore the absolute pitch and let the viewer throw the rootmost note as the root. "
+
+    "Q: What about songs that have a root, but never play it, yet you can still 'hear' it there? I think this is somehow accomplished mathematically be finding the most reduced fractions, by playing VI-V-I to establish the central tone of the piece?"
+   
+    "Inversions are different. If we had three notes in a chord, say DFC, that produces three possible ratios: a minor 3rd between D and F, a minor 7th between D and C, and a fifth between F and C. Its inversion (ONE of the many possible inversions?) is DAC, which has 5, m3, and m7 as the.  "
+ 
+    "Mathematically, m3 + 5 = m7 for the DFC chord, and 5+m3=m7 for the DAC chord. "
+    
+    "Ivar is not really sure this is a true symmetry, although it is certainly a transformation operation. "
+
+    "Ivar posits: An inversion of one note, without any other references, is not possible. "
+
+    "Ivar posits again: Assuming that octaves are cyclical, an inversion of two notes would be to simply bump one note up or down an octave, making the other note the root. i.e. a chord CG would become GC, so the fifth became a fourth?  "
+
+    "Graphically, I have made these observations:
+Root=C3, note=C3. unison makes a line to the right. (Ray, 1 vertex) 1:1
+Root=C3, note=C4. octave makes a line to the right. (Ray, 1 vertex) 1:2 ratio
+Root=C4, note=C3. octave makes a horizontal line. (2 vertexes) But this is a false symmetry; it is the same notes as the previous we just have not chosen the proper root note.
+
+  Inversion pair test 1:
+  Start with a fifth. Root=C3, note=G3 fifth makes a horizontal line (2 vertexes).
+
+  Inversion about C3 moves G3 from being 3/2 larger than C3, to being 2/3rd of C3. 
+  Inversion about G3 moves C3 up to???  
+
+  Comments: I'm a little vague on this. There seems to be two possible inversions: one in linear frequency and one in log frequency. For the linear freq inversion, it seems that given two notes, no matter where you invert about on the number line, the ratio of the two notes will never change. For the log freq inversion, this is not true?
+
+ the ratio between two notes will never change, no matter WHERE you invert about on the number line. 
+
+  I really need to do log transformations. 
+
+Root=C3, note=F3 fourth makes a triangle 3 vertexes
+
+
+
+
+"
+
+    "Ivar posits a 3rd time: "
+
+]
+
+   
+   #_ [:div.section
+    [:h3 "What is a scale?"]
+    [:p "A selection of pitches, of frequencies. "]
+    [:p "Why do we have 12 notes in a scale? How many notes SHOULD we have in the scale?"]
+    [:p "Which notes are available to a musician?"]
+    [:p "The violin can hit ANY note; we are only limited by the sharpness of a musicians' fingers and the sensitivity of her ears."]]
+
+  #_ [:div.section
+    [:h3 "The Development of Scale Complexity"]
+    [:p "Why is 12-Equitemper so amazing? Persian music uses X notes, Indian uses 16 notes. But why are these scales less flexible? "]]
+   ]
+
+  #_ [:div.section
+      [:h3 "Theoretical Maximums"]
+      [:p "Even aliens with perfect hearing would need a certain length of duration to infer two pitches are the same or different. Given the average tempo of our music, what's the theoretical maximum on the number of notes in a scale?"]]
+  
+
+  )
+
+;; "While most of our brains already be too accustomed to habit to appreciate an entirely new scale, it is my hope that this may at least give the future's children a place from which to proceed a little farther along in the development of ever more wonderous music. 
+
+;; |                  pnt dia 12ET Me
+;; | Simple ratios?  | Y | Y | Y | Y
+;; | Complex ratios? | - | Y | Y | Y
+;; | Modulatable?    | - | - | Y | Y
+;; | Expandable?     | - | - | - | Y
+;; "
