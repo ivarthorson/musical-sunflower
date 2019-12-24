@@ -1,0 +1,93 @@
+body {
+  /* font-family: 'Helvetica Neue', Verdana, Helvetica, Arial, sans-serif; font-size: 1.125em;*/
+  font-family: ‘Palatino Linotype’, ‘Book Antiqua’, Palatino, serif;  /*  max-width: 1200px; */
+  margin: 0 auto;
+  padding-top: 10px;
+  -webkit-font-smoothing: antialiased;
+  color: #333;
+  
+}
+
+h1, h2, h3 {
+  color: #000;
+}
+h1 {
+  font-size: 2.5em
+}
+
+h2 {
+  font-size: 2em
+}
+
+h3 {
+  font-size: 1.5em
+}
+
+a {
+  text-decoration: none;
+  color: #09f;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.centerpane {
+  margin-left: 1%;
+ position: fixed;
+}
+
+/*
+ul.lmenu {
+ list-style-type: none;
+ margin: 0;
+ padding: 1%;
+ width: 25%;
+ height: 100%; 
+ position: fixed;
+ overflow: auto;
+}*/
+
+ul.rmenu {
+ list-style-type: none;
+ float: right;
+ overflow: auto;
+ margin: 0;
+ padding: 1%;
+ width: 50%;
+ height: 100%; 
+ overflow: auto;
+}
+
+.resizedtextbox {
+ width: 20%;
+}
+
+.tooltip {
+    pointer-events:none; /*let mouse events pass through*/
+    opacity:0;
+    transition: opacity 0.3s;
+    text-shadow:1px 1px 0px gray;
+}
+
+circle:hover + text.tooltip {
+  opacity:1;
+}
+
+
+rect.pianokey:hover {
+    fill: gray;
+}
+
+table {
+    align: center;
+}
+
+tr.head td {
+    font-weight: bold;
+    font-size: 150%;
+}
+
+input.mybutton {
+    font-size: 80%;
+}

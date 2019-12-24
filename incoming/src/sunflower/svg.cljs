@@ -1,5 +1,5 @@
-(ns musical-sunflower.svg
-  (:require [musical-sunflower.common :refer [d2s]]))
+(ns sunflower.svg
+  (:require [sunflower.common :refer [d2s]]))
 
 ;; For plotting svgs with mathematical-style coordinate systems
 

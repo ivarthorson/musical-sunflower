@@ -1,19 +1,19 @@
-(ns musical-sunflower.core
+(ns sunflower.core
   (:require [reagent.core :as reagent :refer [atom]]
             ;; [reagent.session :as session]
             [cljs.core.async :refer [chan close!]] 
-            [musical-sunflower.common :refer [timeout d2s]]
-            [musical-sunflower.farey :as farey]
-            [musical-sunflower.harmonics :as harmonics]
-            [musical-sunflower.model :as model]           
-            [musical-sunflower.notes :as notes]           
-            [musical-sunflower.piano :as piano]           
-            [musical-sunflower.scales :as scales]           
-            [musical-sunflower.sound :as sound]         
-            [musical-sunflower.spiral :as spiral]           
-            [musical-sunflower.string :as string]       
-            [musical-sunflower.svg :as svg]            
-            [musical-sunflower.widgets :as widgets])
+            [sunflower.common :refer [timeout d2s]]
+            [sunflower.farey :as farey]
+            [sunflower.harmonics :as harmonics]
+            [sunflower.model :as model]
+            [sunflower.notes :as notes]
+            [sunflower.piano :as piano]
+            [sunflower.scales :as scales]
+            [sunflower.sound :as sound]         
+            [sunflower.spiral :as spiral]           
+            [sunflower.string :as string]       
+            [sunflower.svg :as svg]            
+            [sunflower.widgets :as widgets])
   (:require-macros [cljs.core.async.macros :refer [go]]))
 
 (def defaults (atom {:instrument sound/organ
@@ -378,27 +378,7 @@
     [piano/piano-keyboard]
     ]])
 
-(defn slideshow-page  []
-  [:div 
-   [:div.reveal
-    [:div.slides
-     [:section 
-      [:h2 "How Sunflowers Lead to Another Musical Scale"]
-      [:center
-       [:h4 "Jan 31, 2017"]
-       [:h4 "Ivar Thorson"]]]
-
-     [:section [:h2 "What is this about?"]      
-      [:p.fragment "Music? " [:span.fragment "Math? "] [:span.fragment "History? "] [:span.fragment "Psychophysics? "] [:span.fragment "Kooky numerology?"]]
-      [:ol 
-       [:li.fragment "What patterns occur in music?"]
-       [:li.fragment "What does everybody like about music?"]
-       [:li.fragment "What will future/alien music sound like?"]]
-      [:br]
-      [:br]
-      [:p.fragment "Consonance, Dissonance, and Sunflowers."]
-      [:aside.notes "Musically, things have changed a lot in the past 1000 years; there is much more sophisticated polyphony, rhythms, and even more notes available in scale. Over the last 100 years, we have seen an explosion of genres. Can we somehow peer into the future and glimpse what lies ahead? How will musical scales antd polyphony be extended in complexity in the future?
-More broadly, what won't change even in the future? What does non-human or alien music sound like, if it exists somewhere in the universe? Is there any part of music that is universal, like math?"]]
+(comment 
 
      [:section [:h2 "Vibrating String"]
       [string/vibrating-string-svg] [:br]
@@ -545,9 +525,31 @@ More broadly, what won't change even in the future? What does non-human or alien
 
      [:section [:h2 "The End"]
       [:p "Thank you for listening!"]]
-     ]
+     
+     )
 
-    ]])
+(defn slideshow-page  []
+  (fn []
+     [:div.reveal
+      [:div.slides
+       [:section 
+        [:h2 "How Sunflowers Lead to Another Musical Scale"]
+        [:center
+         [:h4 "Jan 31, 2017"]
+         [:h4 "Ivar Thorson"]]]
+
+       [:section [:h2 "What is this about?"]      
+        [:p.fragment "Music? " [:span.fragment "Math? "] [:span.fragment "History? "] [:span.fragment "Psychophysics? "] [:span.fragment "Kooky numerology?"]]
+        [:ol 
+         [:li.fragment "What patterns occur in music?"]
+         [:li.fragment "What does everybody like about music?"]
+         [:li.fragment "What will future/alien music sound like?"]]
+        [:br]
+        [:br]
+        [:p.fragment "Consonance, Dissonance, and Sunflowers."]
+        [:aside.notes "Musically, things have changed a lot in the past 1000 years; there is much more sophisticated polyphony, rhythms, and even more notes available in scale. Over the last 100 years, we have seen an explosion of genres. Can we somehow peer into the future and glimpse what lies ahead? How will musical scales antd polyphony be extended in complexity in the future?
+More broadly, what won't change even in the future? What does non-human or alien music sound like, if it exists somewhere in the universe? Is there any part of music that is universal, like math?"]]
+       ]]))
 
 ;; [:li "MATHjax test: " [:script
 ;;                        {:type "text/x-mathjax-config"}
@@ -560,7 +562,7 @@ More broadly, what won't change even in the future? What does non-human or alien
   []
   (println "init-reveal!")
   ;;this is just to re-trigger the Reveal code during development!
-  (go (<! (timeout 10))
+  (go (<! (timeout 1000))
       (.configure js/Reveal (js-obj {:controls false
                                      :progress false
                                      :history true
@@ -571,8 +573,45 @@ More broadly, what won't change even in the future? What does non-human or alien
                                      :minscale 1
                                      :maxscale 1
                                      }))
-      (println (.getConfig js/Reveal))))
+      (println "Done setting config: " (.getConfig js/Reveal))))
+
+
+(defn fake-page []
+  (fn []
+    [:div.slides
+     [:section 
+      [:h2 "How Sunflowers Lead to Another Musical Scale"]
+      [:center
+       [:h4 "Jan 31, 2017"]
+       [:h4 "Ivar Thorson"]]]
+     
+     [:section [:h2 "What is this about?"]      
+      [:p.fragment "Music? " [:span.fragment "Math? "] [:span.fragment "History? "] [:span.fragment "Psychophysics? "] [:span.fragment "Kooky numerology?"]]
+      [:ol 
+       [:li.fragment "What patterns occur in music?"]
+       [:li.fragment "What does everybody like about music?"]
+       [:li.fragment "What will future/alien music sound like?"]]
+      [:br]
+      [:br]
+      [:p.fragment "Consonance, Dissonance, and Sunflowers."]
+      [:aside.notes "Musically, things have changed a lot in the past 1000 years; there is much more sophisticated polyphony, rhythms, and even more notes available in scale. Over the last 100 years, we have seen an explosion of genres. Can we somehow peer into the future and glimpse what lies ahead? How will musical scales antd polyphony be extended in complexity in the future?
+More broadly, what won't change even in the future? What does non-human or alien music sound like, if it exists somewhere in the universe? Is there any part of music that is universal, like math?"]]
+
+     ]))
 
 (defn init []
-  (reagent/render [slideshow-page] (.getElementById js/document "app"))
-  (init-reveal))
+  (println "Running init:") 
+  ;;(reagent/render [slideshow-page] (.getElementById js/document "app"))
+  (reagent/render [fake-page] (.getElementById js/document "app"))
+  (init-reveal)
+  )
+
+(defn on-js-reload []
+
+  (println "Reloading-on-js")  
+  (init)
+  )
+  ;; optionally touch your app-state to force rerendering depending on
+  ;; your application
+  ;; (swap! app-state update-in [:__figwheel_counter] inc)
+

@@ -1,0 +1,3 @@
+{:require  [musical-sunflower.core]
+ :init-fns [musical-sunflower.core/init]
+ :compiler-options {}}
